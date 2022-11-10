@@ -1,0 +1,28 @@
+body {
+  background-color: #505155;
+  font-family: Menlo;
+  color: white;
+  margin: 0;
+}
+.typed-out{
+  overflow: hidden;
+  white-space: nowrap;
+  animation: 
+    typing 2s forwards;
+  font-size: 1.6rem;
+  width: 0;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  margin-right:10px;
+}
