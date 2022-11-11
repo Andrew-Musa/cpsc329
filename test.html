@@ -20,6 +20,16 @@
 	<h1>Try the Central Dogma Hash Algorithm for yourself!</h1>
 </div>
 
+<input type="text" id="text" placeholder="Enter Password">
+	<span id="output"></span>
 	
+<script type="text/python" id="script0">
+	from browser import document
+	
+	def show_text(e):
+		document['output'].textContent = e.target.value;
+		
+	document['text'].bind('input', show_text)
+</script>
 </body>
 </html>
