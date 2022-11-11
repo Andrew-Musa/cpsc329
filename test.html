@@ -36,7 +36,7 @@
 		return DNA_result
 	
 	def show_text(e):
-		input = test.value
+		input = test.__call__("")
 		document["field"].clear()
 		document["field"] <= (f"Hashed value is: {input}")
 	document["btn"].bind("click", show_text)
