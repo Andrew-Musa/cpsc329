@@ -22,7 +22,8 @@
 
 <input type="text" id="text" placeholder="Enter Password">
 	<button id="btn">Hash!</button></br>
-	<span id="output"></span>
+	<!--<span id="output"></span>-->
+	<div id="field"></div>
 	
 <script type="text/python" id="script0">
 	from browser import document
@@ -31,7 +32,9 @@
 	#document['text'].bind('input', show_text)
 	
 	def show_text(e):
-		document['output'].textContent = e.target.value;
+		input = document["text"].value
+		document["field"].clear()
+		document["field"] <= (f"Hashed value is: {input}")
 	document["btn"].bind("click", show_text)
 </script>
 </body>
