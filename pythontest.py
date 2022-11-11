@@ -15,4 +15,4 @@ def hello():
     return 'Hello %s %s have fun learning python <br/> <a href="/">Back Home</a>' % (first_name, last_name)
 
 if __name__ == '__main__':
-    app.run(host = '0.0.0.0', port = 3000)
+    app.run(host = 'https://andrew-musa.github.io/cpsc329/about.html', port = 3000)
