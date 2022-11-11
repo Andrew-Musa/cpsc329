@@ -31,8 +31,12 @@
 		#document['output'].textContent = e.target.value;
 	#document['text'].bind('input', show_text)
 	
+	def test(string):
+		DNA_result = "hello world!"
+		return DNA_result
+	
 	def show_text(e):
-		input = document["text"].value
+		input = test.value
 		document["field"].clear()
 		document["field"] <= (f"Hashed value is: {input}")
 	document["btn"].bind("click", show_text)
