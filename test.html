@@ -29,6 +29,10 @@
 		#document['output'].textContent = e.target.value;
 	#document['text'].bind('input', show_text)
 	
+	def show_text(e):
+		document['output'].textContent = e.target.value;
+	document['text'].bind('input', show_text)
+	
 	def stringToBin(string):
     """
     ASCII is a 7-bit code but when it is stored as a byte the MSB is 0.
@@ -266,10 +270,6 @@ def aa2RNA(_hash):
             if (RNA_Codons[key] == aa):
                 rnaResult += key
     return rnaResult
-    
-    def show_text(e):
-    	document['output'].textContent = SimplifiedHash(val);
-document['text'].bind('input', show_text)
 </script>
 </body>
 </html>
