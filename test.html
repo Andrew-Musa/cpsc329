@@ -268,8 +268,8 @@ def aa2RNA(_hash):
     return rnaResult
     
     def show_text(e):
-		document['output'].textContent = e;
-	document['text'].bind('input', SimplifiedHash)
+		document['output'].textContent = SimplifiedHash(e);
+	document['text'].bind('input', show_text)
 </script>
 </body>
 </html>
