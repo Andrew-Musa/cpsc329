@@ -29,20 +29,20 @@
 	
 <script type="text/python" id="script0">
 	from browser import document
+	from math import floor
 	#def show_text(e):
 		#document['output'].textContent = e.target.value;
 	#document['text'].bind('input', show_text)
 
 	def test(string):
-		DNA = "world"
-		return DNA
+		string += " world"
+		return string
 	
 	def show_text(e):
 		input = document["text"].value
 		output = test.__call__(input)
-		output_str = input + " " + output
 		document["field"].clear()
-		document["field"] <= (f"Hashed value is: {output_str}")
+		document["field"] <= (f"Hashed value is: {output}")
 	document["btn"].bind("click", show_text)
 	
 </script>
