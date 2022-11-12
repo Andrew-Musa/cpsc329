@@ -34,6 +34,17 @@
 	from time import perf_counter
 	from math import floor
 
+	def test(string):
+		DNA = "hello"
+		return DNA
+	
+	def show_text(e):
+		#input = document["text"].value
+		#output = genesisHash.__call__(input)
+		output = test.__call__("")
+		document["field"].clear()
+		document["field"] <= (f"Hashed value is: {output}")
+	document["btn"].bind("click", show_text)
 
 	def remappedASCII(ASCII):
     		"""
@@ -231,17 +242,7 @@
 
     		return AA
 		
-	def test(string):
-		DNA = "hello"
-		return DNA
 	
-	def show_text(e):
-		#input = document["text"].value
-		#output = genesisHash.__call__(input)
-		output = test.__call__("")
-		document["field"].clear()
-		document["field"] <= (f"Hashed value is: {output}")
-	document["btn"].bind("click", show_text)
 </script>
 </body>
 </html>
