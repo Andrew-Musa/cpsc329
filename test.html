@@ -57,8 +57,13 @@
 
 		output = test.__call__("fdsfdasfsd")
 		print(output)"""
-input = document["text"].value
-print(input)
+		
+def show_text(e):
+	input = document["text"].value
+	document["field"].clear()
+	document["field"] <= (f"Hashed value is: {output}")
+
+document["btn"].bind("click", show_text)
 	</py-script>
 </body>
 </html>
