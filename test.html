@@ -54,9 +54,16 @@
 </script>
 	
 	<py-script>
-		print("hello world!")
+		"""print("hello world!")
 		x = 0
-		pyscript.write("text", x + 1)
+		pyscript.write("text", x + 1)"""
+		
+		def test(string):
+			DNA = "hello"
+			return DNA
+
+		output = test.__call__("fdsfdasfsd")
+		print(output)
 	</py-script>
 </body>
 </html>
