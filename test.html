@@ -6,9 +6,6 @@
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.11.0/brython.js" integrity="sha512-9h/FswJ8lwp6Lf5IrbROrJbdPEFx6vGSjf4KUpj6SZwPs9xaFdmgBUHnV2AcM1a+bPJHhEl+faDb5/qtCN+9eg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.11.0/brython_stdlib.js" integrity="sha512-WdKCrCGzSenNboZurm+9PhwiWViUwcGF0z0GHrziQi96bNSZdtkCo1cYCIqg4JhZqoppYaBbundeICn684p4Tw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	
-	<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-    	<script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 
 <body onload="brython()">
@@ -36,34 +33,18 @@
 		#document['output'].textContent = e.target.value;
 	#document['text'].bind('input', show_text)
 
-	"""def test(string):
-		DNA = "hello"
+	def test(string):
+		DNA = "world"
 		return DNA
 	
 	def show_text(e):
-		#input = document["text"].value
-		#output = genesisHash.__call__(input)
-		output = test.__call__("")
+		input = document["text"].value
+		output = test.__call__(input)
+		output_str = input + " " + output
 		document["field"].clear()
-		document["field"] <= (f"Hashed value is: {output}")
-	document["btn"].bind("click", show_text)"""
+		document["field"] <= (f"Hashed value is: {output_str}")
+	document["btn"].bind("click", show_text)
 	
 </script>
-	
-	<py-script>
-		"""def test(string):
-			DNA = "hello"
-			return DNA
-
-		output = test.__call__("fdsfdasfsd")
-		print(output)"""
-		
-		def show_text(e):
-			input = document["text"].value
-			document["field"].clear()
-			document["field"] <= (f"Hashed value is: {output}")
-
-		document["btn"].bind("click", show_text)
-	</py-script>
 </body>
 </html>
