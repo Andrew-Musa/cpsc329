@@ -17,6 +17,7 @@
   			margin: 4px 2px;
   			opacity: 0.6;
   			transition: 0.3s;
+			border-radius: 5px;
 		}
 		
 		.hashbtn:hover {opacity: 1}
@@ -34,6 +35,12 @@
 		padding: 12px 20px 12px 40px;
 		-webkit-transition: width 0.4s ease-in-out;
 		transition: width 0.4s ease-in-out;
+		}
+		
+		.textfield {
+			background-color: white;
+			border-radius: 5px;
+		}
 	</style>
 </head>
 
@@ -52,7 +59,7 @@
 <center><input type="text" id="text" placeholder="Enter Password"></center></br>
 	<center><button id="btn" class="hashbtn">Hash!</button></br></center>
 	<!--<span id="output"></span>-->
-	<div id="field" style="width:100%;height:auto;overflow-x: hidden;word-wrap: break-word;"></div>
+	<div class="textfield"><div id="field" style="width:100%;height:auto;overflow-x: hidden;word-wrap: break-word;"></div></div>
 	
 	<p id="text"></p>
 	
