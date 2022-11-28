@@ -38,9 +38,13 @@
 		}
 		
 		.textfield {
+			width = 750px;
+			box-sizing: border-box;
+			border: 2px solid #ccc;
+			border-radius: 4px;
+			font-size: 16px;
 			background-color: white;
-			border-radius: 5px;
-			width = 50%;
+			padding: 12px 20px 12px 40px;
 		}
 	</style>
 </head>
@@ -60,7 +64,7 @@
 <center><input type="text" id="text" placeholder="Enter Password"></center></br>
 	<center><button id="btn" class="hashbtn">Hash!</button></br></center>
 	<!--<span id="output"></span>-->
-	<div class="textfield"><div id="field" style="width:100%;height:auto;overflow-x: hidden;word-wrap: break-word;color: black;"></div></div>
+	<center><div class="textfield"><div id="field" style="width:100%;height:auto;overflow-x: hidden;word-wrap: break-word;color: black;"></div></div></center>
 	
 	<p id="text"></p>
 	
