@@ -2,9 +2,29 @@
 <html>
 <head>
 	<title>Overview</title>
-	<link rel="stylesheet" href="index.css">
+	<!--<link rel="stylesheet" href="index.css">-->
 	
 	<script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
+	<style>
+		body {
+  background-color: #505155;
+  font-family: Menlo;
+  color: white;
+  margin: 0;
+  overflow-x: hidden;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  margin-right:10px;
+}
+	</style>
 </head>
 
 <body>
@@ -94,72 +114,58 @@ in other words a collision
 	
 	
 	
-	<h1
+<h1
 id="collision-probability-of-genesis-hash-algorithm-uniform-distribution">Collision
 Probability of Genesis Hash Algorithm (Uniform Distribution)</h1>
 <ul>
-<li>Suppose we have <span class="math inline">n</span> possible <span
-class="math inline">8</span> character passwords and <span
-class="math inline">m</span> possible <span
+<li>Suppose we have <span class="math inline"><em>n</em></span> possible
+<span class="math inline">8</span> character passwords and <span
+class="math inline"><em>m</em></span> possible <span
 class="math inline">256</span> character hashes. What is the probability
 that at least two passwords will collide and have the same hash?
 <ul>
-<li><span class="math inline">\text{n passwords}</span>
+<li><span class="math inline">n passwords</span>
 <ul>
 <li>ASCII has <span class="math inline">95</span> printable
 characters</li>
 <li>since there are <span class="math inline">8</span> character is the
-password <span class="math inline">n = 95^8</span></li>
+password <span
+class="math inline"><em>n</em> = 95<sup>8</sup></span></li>
 </ul></li>
-<li><span class="math inline">\text{m hashes}</span>
+<li><span class="math inline">m hashes</span>
 <ul>
 <li>there are <span class="math inline">20</span> different amino acids
 and <span class="math inline">1</span> nonsense codon thus there are
 <span class="math inline">21</span> possible characters that can be used
 in the hash</li>
 <li>since there are 256 characters in the hash <span
-class="math inline">m = 21^{256}</span></li>
+class="math inline"><em>m</em> = 21<sup>256</sup></span></li>
 </ul></li>
-<li><span class="math inline">\text{passwords are labeled from
-1...n}</span></li>
-<li><span class="math inline">E{i,j}:\text{&quot;password i and j
-collide&quot;, } (i \ne j)</span>
+<li><span class="math inline">passwords are labeled from
+1...n</span></li>
+<li><span
+class="math inline"><em>E</em><sub><em>i</em>, <em>j</em></sub> : "password
+i and j collide", (<em>i</em>≠<em>j</em>)</span>
 <ul>
-<li><span class="math inline">E{i,j} = E{j,i}</span></li>
+<li><span
+class="math inline"><em>E</em><sub><em>i</em>, <em>j</em></sub> = <em>E</em><sub><em>j</em>, <em>i</em></sub></span></li>
 </ul></li>
 <li>Assuming uniform distribution:
 <ul>
-<li><span class="math inline">p(E{i,j}) = \frac{1}{m}:</span> as
+<li><span class="math inline">$p(E_{i,j}) = \frac{1}{m}:$</span> as
 regardless of what the hash of the first password is the second password
 must have the same hash</li>
 </ul></li>
-<li><span class="math inline">E: \text{&quot;at least two passwords
-collide&quot;}</span>
+<li><span class="math inline"><em>E</em> : "at least two passwords
+collide"</span>
 <ul>
 <li>in other words a collision</li>
-<li>the event <span class="math inline">E</span> that at least two
-passwords collide consist of cases where more than two passwords
+<li>the event <span class="math inline"><em>E</em></span> that at least
+two passwords collide consist of cases where more than two passwords
 collide</li>
-<li><span class="math display">E = \bigcup{1 \le i \lt j \le
-n}E{i,j}</span></li>
+<li><span
+class="math display"><em>E</em> = ⋃<sub>1 ≤ <em>i</em> &lt; <em>j</em> ≤ <em>n</em></sub><em>E</em><sub><em>i</em>, <em>j</em></sub></span></li>
 </ul></li>
-<li><span class="math display">
-  \begin{align}
-  p(E) = p(\bigcup{1 \le i \lt j \le n}E{i,j}) &amp;\le \sum{1 \le i \lt
-j \le n}p(E{i,j}) \quad \text{(by the Union Bound)}\
-  &amp;\le \sum_{1 \le i \lt j \le n}\frac{1}{m} \
-  &amp;\le {n \choose 2} \cdot \frac{1}{m} \
-  &amp;\le \frac{n!}{2!(n-2)!} \cdot \frac{1}{m} \
-  &amp;\le \frac{n(n-1)(n-2)!}{2(n-2)!} \cdot \frac{1}{m} \
-  &amp;\le \frac{n(n-1)}{2} \cdot \frac{1}{m} \
-  &amp;\le \frac{n(n-1)}{2m} \
-  &amp;\lt \frac{n^2}{2m} \
-  &amp;\lt \frac{(95^8)^2}{2 \cdot 21^{256}} \approx 7.1517 \times
-10^{-308}
-  \end{align}
-  </span></li>
-</ul></li>
-</ul>
 
 </div>
 
