@@ -6,6 +6,21 @@
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.11.0/brython.js" integrity="sha512-9h/FswJ8lwp6Lf5IrbROrJbdPEFx6vGSjf4KUpj6SZwPs9xaFdmgBUHnV2AcM1a+bPJHhEl+faDb5/qtCN+9eg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.11.0/brython_stdlib.js" integrity="sha512-WdKCrCGzSenNboZurm+9PhwiWViUwcGF0z0GHrziQi96bNSZdtkCo1cYCIqg4JhZqoppYaBbundeICn684p4Tw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<style>
+		.hashbtn {
+  			background-color: rgb(40, 140, 85);
+  			border: none;
+  			color: white;
+  			padding: 16px 32px;
+  			text-align: center;
+  			font-size: 16px;
+  			margin: 4px 2px;
+  			opacity: 0.6;
+  			transition: 0.3s;
+		}
+		
+		.hashbtn:hover {opacity: 1}
+	</style>
 </head>
 
 <body onload="brython()">
@@ -21,7 +36,7 @@
 </div>
 
 <center><input type="text" id="text" placeholder="Enter Password"></center></br>
-	<center><button id="btn">Hash!</button></br></center>
+	<center><button id="btn" class="hashbtn">Hash!</button></br></center>
 	<!--<span id="output"></span>-->
 	<div id="field" style="width:100%;height:auto;overflow-x: hidden;word-wrap: break-word;"></div>
 	
