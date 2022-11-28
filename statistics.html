@@ -6,13 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Untitled</title>
   <style>
-    html {
-      line-height: 1.5;
-      font-family: Georgia, serif;
-      font-size: 20px;
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
     body {
       background-color: #505155;
       font-family: Menlo;
@@ -20,6 +13,17 @@
       margin: 0 auto;
       /*max-width: 40em;*/
       max-width: 100%;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    .solution {
+      max-width: 40em;
       padding-left: 50px;
       padding-right: 50px;
       padding-top: 50px;
@@ -138,7 +142,7 @@
       margin-bottom: 4em;
       text-align: center;
     }
-    /*#TOC li {
+    #TOC li {
       list-style: none;
     }
     #TOC ul {
@@ -149,7 +153,7 @@
     }
     #TOC a:not(:hover) {
       text-decoration: none;
-    }*/
+    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -161,17 +165,6 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
-    
-    ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  display: inline;
-  margin-right:10px;
-}
   </style>
   <script defer=""
   src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
@@ -196,13 +189,15 @@ li {
   <![endif]-->
 </head>
 <body>
-  <ul>
-  <li><a href="https://andrew-musa.github.io/cpsc329/index.html" style="color:white;text-decoration: none;">Home</a></li>
-  <li><a href="https://andrew-musa.github.io/cpsc329/test.html" style="color:white;text-decoration: none;">Test</a></li>
-  <li><a href="https://andrew-musa.github.io/cpsc329/statistics.html" style="color:white;text-decoration: none;">Statistcis & Proofs</a></li>
-  <li><a href="https://andrew-musa.github.io/cpsc329/overview.html" style="color:white;text-decoration: none;">Overview</a></li>
-  <li><a href="https://andrew-musa.github.io/cpsc329/about.html" style="color:white;text-decoration: none;">About</a></li>
+  <ul style="list-style-type: none;margin: 0;padding: 0;">
+  <li style="display: inline;margin-right:10px;"><a href="https://andrew-musa.github.io/cpsc329/index.html" style="color:white;text-decoration: none;">Home</a></li>
+  <li style="display: inline;margin-right:10px;"><a href="https://andrew-musa.github.io/cpsc329/test.html" style="color:white;text-decoration: none;">Test</a></li>
+  <li style="display: inline;margin-right:10px;"><a href="https://andrew-musa.github.io/cpsc329/statistics.html" style="color:white;text-decoration: none;">Statistcis & Proofs</a></li>
+  <li style="display: inline;margin-right:10px;"><a href="https://andrew-musa.github.io/cpsc329/overview.html" style="color:white;text-decoration: none;">Overview</a></li>
+  <li style="display: inline;margin-right:10px;"><a href="https://andrew-musa.github.io/cpsc329/about.html" style="color:white;text-decoration: none;">About</a></li>
 </ul>
+  
+  <div class="solution">
 <h1
 id="collision-probability-of-genesis-hash-algorithm-uniform-distribution">Collision
 Probability of Genesis Hash Algorithm (Uniform Distribution)</h1>
@@ -269,5 +264,7 @@ n}E_{i,j}</span></li>
   </span>
 </ul></li>
 </ul>
+    
+  </div>
 </body>
 </html>
