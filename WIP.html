@@ -1,77 +1,250 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Untitled</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
 <body>
-    <h1
+<h1
 id="collision-probability-of-genesis-hash-algorithm-uniform-distribution">Collision
 Probability of Genesis Hash Algorithm (Uniform Distribution)</h1>
 <ul>
-<li>Suppose we have <span class="math inline"><em>n</em></span> possible
-<span class="math inline">8</span> character passwords and <span
-class="math inline"><em>m</em></span> possible <span
+<li>Suppose we have <span class="math inline">n</span> possible <span
+class="math inline">8</span> character passwords and <span
+class="math inline">m</span> possible <span
 class="math inline">256</span> character hashes. What is the probability
 that at least two passwords will collide and have the same hash?
 <ul>
-<li><span class="math inline">n passwords</span>
+<li><span class="math inline">\text{n passwords}</span>
 <ul>
 <li>ASCII has <span class="math inline">95</span> printable
 characters</li>
 <li>since there are <span class="math inline">8</span> character is the
-password <span
-class="math inline"><em>n</em> = 95<sup>8</sup></span></li>
+password <span class="math inline">n = 95^8</span></li>
 </ul></li>
-<li><span class="math inline">m hashes</span>
+<li><span class="math inline">\text{m hashes}</span>
 <ul>
 <li>there are <span class="math inline">20</span> different amino acids
 and <span class="math inline">1</span> nonsense codon thus there are
 <span class="math inline">21</span> possible characters that can be used
 in the hash</li>
 <li>since there are 256 characters in the hash <span
-class="math inline"><em>m</em> = 21<sup>256</sup></span></li>
+class="math inline">m = 21^{256}</span></li>
 </ul></li>
-<li><span class="math inline">passwords are labeled from
-1...n</span></li>
-<li><span
-class="math inline"><em>E</em><sub><em>i</em>, <em>j</em></sub> : "password
-i and j collide", (<em>i</em>≠<em>j</em>)</span>
+<li><span class="math inline">\text{passwords are labeled from
+1...n}</span></li>
+<li><span class="math inline">E_{i,j}:\text{&quot;password i and j
+collide&quot;, } (i \ne j)</span>
 <ul>
-<li><span
-class="math inline"><em>E</em><sub><em>i</em>, <em>j</em></sub> = <em>E</em><sub><em>j</em>, <em>i</em></sub></span></li>
+<li><span class="math inline">E_{i,j} = E_{j,i}</span></li>
 </ul></li>
 <li>Assuming uniform distribution:
 <ul>
-<li><span class="math inline">$p(E_{i,j}) = \frac{1}{m}:$</span> as
+<li><span class="math inline">p(E_{i,j}) = \frac{1}{m}:</span> as
 regardless of what the hash of the first password is the second password
 must have the same hash</li>
 </ul></li>
-<li><span class="math inline"><em>E</em> : "at least two passwords
-collide"</span>
+<li><span class="math inline">E: \text{&quot;at least two passwords
+collide&quot;}</span>
 <ul>
 <li>in other words a collision</li>
-<li>the event <span class="math inline"><em>E</em></span> that at least
-two passwords collide consist of cases where more than two passwords
+<li>the event <span class="math inline">E</span> that at least two
+passwords collide consist of cases where more than two passwords
 collide</li>
-<li><span
-class="math display"><em>E</em> = ⋃<sub>1 ≤ <em>i</em> &lt; <em>j</em> ≤ <em>n</em></sub><em>E</em><sub><em>i</em>, <em>j</em></sub></span></li>
+<li><span class="math display">E = \bigcup_{1 \le i \lt j \le
+n}E_{i,j}</span></li>
 </ul></li>
-<pre><code>$$
-    \begin{align}
-    p(E) = p(\bigcup_{1 \le i \lt j \le n}E_{i,j}) &amp;\le \sum_{1 \le i \lt j \le n}p(E_{i,j}) \quad \text{(by the Union Bound)}\\
-    &amp;\le \sum_{1 \le i \lt j \le n}\frac{1}{m} \\
-    &amp;\le {n \choose 2} \cdot \frac{1}{m} \\
-    &amp;\le \frac{n!}{2!(n-2)!} \cdot \frac{1}{m} \\
-    &amp;\le \frac{n(n-1)(n-2)!}{2(n-2)!} \cdot \frac{1}{m} \\
-    &amp;\le \frac{n(n-1)}{2} \cdot \frac{1}{m} \\
-    &amp;\le \frac{n(n-1)}{2m} \\
-    &amp;\lt \frac{n^2}{2m} \\
-    &amp;\lt \frac{(95^8)^2}{2 \cdot 21^{256}} \approx 7.1517 \times 10^{-308}
-    \end{align}
-    $$</code></pre>
+<li><span class="math display">
+  \begin{align}
+  p(E) = p(\bigcup_{1 \le i \lt j \le n}E_{i,j}) &amp;\le \sum_{1 \le i
+\lt j \le n}p(E_{i,j}) \quad \text{(by the Union Bound)}\\
+  &amp;\le \sum_{1 \le i \lt j \le n}\frac{1}{m} \\
+  &amp;\le {n \choose 2} \cdot \frac{1}{m} \\
+  &amp;\le \frac{n!}{2!(n-2)!} \cdot \frac{1}{m} \\
+  &amp;\le \frac{n(n-1)(n-2)!}{2(n-2)!} \cdot \frac{1}{m} \\
+  &amp;\le \frac{n(n-1)}{2} \cdot \frac{1}{m} \\
+  &amp;\le \frac{n(n-1)}{2m} \\
+  &amp;\lt \frac{n^2}{2m} \\
+  &amp;\lt \frac{(95^8)^2}{2 \cdot 21^{256}} \approx 7.1517 \times
+10^{-308}
+  \end{align}
+  </span></li>
 </ul></li>
 </ul>
 </body>
