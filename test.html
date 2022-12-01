@@ -76,30 +76,64 @@
 <script type="text/python" id="script0">
 from browser import document
 from math import floor
-	#def show_text(e):
-		#document['output'].textContent = e.target.value;
-	#document['text'].bind('input', show_text)
+
+
+def CDFA1_256_Hash(password):
+    remappedASCII_PW = strToRemappedASCII(password)
+    _hash = appendEvenOrOddIndices(
+        remappedASCII_PW, "even") + appendEvenOrOddIndices(remappedASCII_PW, "odd")
+
+    for i in range(3):
+        _hash = desiredHashLength(_hash)
+        _hash = intronSplicing(_hash)
+    _hash = desiredHashLength(_hash)
+
+    binary = decimalToBin(_hash)
+
+    RNA = binToRNA(binary)
+
+    AA = RNA2aminoAcids(RNA)
+
+    return AA
+
 
 def remappedASCII(ASCII):
+    """
+    95 Printable characters 32 - 126
+    https://en.wikipedia.org/wiki/ASCII
+    https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html
+
+    Remaps ASCII value to a unique 12-14 digit value (Tested).
+    """
     LEADING_ZERO = "0"
 
     strASCII = str(ASCII)
 
+    # Use property of strings to separate ASCII digits
     if ASCII < 10:
+        # Single digit ASCII values
         L_0 = L_1 = LEADING_ZERO
         L_2 = strASCII
     elif ASCII < 100:
+        # Two digit ASCII values
         L_0 = LEADING_ZERO
         L_1, L_2 = strASCII
     else:
+        # Three digit ASCII values
         L_0, L_1, L_2 = strASCII
 
+    # Convert separate string digits back to int
     L_0 = int(L_0)
     L_1 = int(L_1)
     L_2 = int(L_2)
 
+    """
+    Before modulus:
+        min = 29124297227663 (14 digits)
+        max = 325620017749655509090396059873 (30 digits)
+    """
     return floor(floor(((L_0+3)**10 + (L_1+3)**10)/3) /
-                 (L_2+3))**3 % (10**14)
+                    (L_2+3))**3 % (10**14)
 
 
 def strToRemappedASCII(string):
@@ -128,6 +162,11 @@ def appendEvenOrOddIndices(str, type="even", length=-1):
 
 
 def intronSplicing(decimal, threshold=14):
+    """
+    5'-GU...AG-3'
+    5'-1001...0010-3'
+    5'-oeeo...eeoe-3'
+    """
     strDecimal = str(decimal)
     dnaLen = len(strDecimal)
     if dnaLen >= 8:
@@ -138,6 +177,7 @@ def intronSplicing(decimal, threshold=14):
         endFound = False
         result = ""
         for i in range(dnaLen-7):
+            # Start of Intron
             if (not startFound and
                 int(strDecimal[i]) % 2 == 1 and
                 int(strDecimal[i+1]) % 2 == 0 and
@@ -145,6 +185,7 @@ def intronSplicing(decimal, threshold=14):
                     int(strDecimal[i+3]) % 2 == 1):
                 startRemove = i
                 startFound = True
+            # End of Intron
             if (startFound and
                 int(strDecimal[i+4]) % 2 == 0 and
                 int(strDecimal[i+5]) % 2 == 0 and
@@ -152,16 +193,34 @@ def intronSplicing(decimal, threshold=14):
                     int(strDecimal[i+7]) % 2 == 0):
                 endRemove = i+7
                 endFound = True
+            # Remove Intron
             if endFound:
                 startFound = False
                 endFound = False
                 introns.append(strDecimal[startRemove:endRemove+1])
+
         for intron in introns:
             intronLen = len(intron)
+
+            # Remove intron if resulting string is long enough
             if (dnaLen-intronLen >= threshold):
                 dnaLen -= intronLen
                 strDecimal = strDecimal.replace(intron, "")
+
     return int(strDecimal)
+
+
+def desiredHashLength(_hash, hashLength=256):
+    while _hash < 10**(hashLength*2*3*2):
+        """
+        *2: takes two bits/digits to map to a DNA base 
+        *3: takes three DNA bases to map to a RNA codon
+        *2: double the length as appendEvenOrOddIndices() will reduce the length by at most half
+        """
+        _hash = _hash**3
+
+    _hash = appendEvenOrOddIndices(str(_hash), "odd", hashLength*2*3)
+    return _hash
 
 
 def decimalToBin(decimal):
@@ -170,6 +229,7 @@ def decimalToBin(decimal):
     for i in range(len(strDecimal)):
         binary += str(int(strDecimal[i]) % 2)
     return binary
+
 
 def binToRNA(bin):
     DNA_Result = ""
@@ -183,6 +243,7 @@ def binToRNA(bin):
                 DNA_Result += bin2DnaMap[key]
 
     return DNA_Result
+
 
 def RNA2aminoAcids(RNA):
     aaResult = ""
@@ -218,31 +279,10 @@ def RNA2aminoAcids(RNA):
                 aaResult += RNA_Codons[key]
     return aaResult
 
-def desiredHashLength(_hash, hashLength=256):
-    while _hash < 10**(hashLength*2*3*2):
-        _hash = _hash**3
-
-    _hash = appendEvenOrOddIndices(str(_hash), "odd", hashLength*2*3)
-    return _hash
-
-def genesisHash(password):
-    remappedASCII_PW = strToRemappedASCII(password)
-    _hash = appendEvenOrOddIndices(
-        remappedASCII_PW, "even") + appendEvenOrOddIndices(remappedASCII_PW, "odd")
-
-    for i in range(3):
-        _hash = desiredHashLength(_hash)
-        _hash = intronSplicing(_hash)
-    _hash = desiredHashLength(_hash)
-    binary = decimalToBin(_hash)
-    RNA = binToRNA(binary)
-    AA = RNA2aminoAcids(RNA)
-    return AA
-
 	
 def show_text(e):
 	input = document["text"].value
-	output = genesisHash.__call__(input)
+	output = CDFA1_256_Hash.__call__(input)
 	document["field"].clear()
 	document["field"] <= (f"Hashed value is: {output}")
 document["btn"].bind("click", show_text)
