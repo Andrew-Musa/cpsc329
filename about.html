@@ -25,11 +25,11 @@
 			text-align: center;
 		}
 		
-		.centerp {
- 			/*top: 50%;*/
-			margin-top: 50%;
- 			/*transform: translate(0, -50%);*/
- 			/*padding: 10px;*/
+		.child {
+ 			position: absolute;
+ 			top: 50%;
+  			left: 50%;
+			margin: -50px 0 0 -50px;
 		}
 		
 		@media screen and (max-width:1200px){
@@ -64,10 +64,10 @@
 	
 	<div class="containerdiv">
 		
-		<div class="box"><p class="centerp">One-Way Function</p></div>
-		<div class="box"><p class="centerp">256 Character Digest</p></div>
-		<div class="box"><p class="centerp">prob("collision") = 7.1517x10</p></div>
-		<div class="box"><p class="centerp">Single Thread Brute Force Attack 5108985329 Years!</p></div>
+		<div class="box"><div class="child">One-Way Function</div></div>
+		<div class="box"><div class="child">256 Character Digest</div></div>
+		<div class="box"><div class="child">prob("collision") = 7.1517x10</div></div>
+		<div class="box"><div class="child">Single Thread Brute Force Attack 5108985329 Years!</div></div>
 		
 	</div>
 
