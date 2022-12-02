@@ -145,7 +145,7 @@ Your browser does not support the video tag.
 	
 	
 	<div style="margin-left:10px;">
-	<h1>Try the Central Dogma Hash Algorithm for yourself!</h1>
+	<h1>CDHA1-256 Hash Generator</h1>
 </div>
 
 <center><input type="text" id="text" placeholder="Enter Text to Hash!"></center></br>
@@ -360,7 +360,7 @@ def show_text(e):
 	input = document["text"].value
 	output = CDFA1_256_Hash.__call__(input)
 	document["field"].clear()
-	document["field"] <= (f"Hashed value is: {output}")
+	document["field"] <= (f"CDHA1-256 Result {output}")
 document["btn"].bind("click", show_text)
 	
 </script>
