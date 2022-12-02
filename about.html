@@ -24,6 +24,14 @@
 			box-sizing: border-box;
 		}
 		
+		.centerp {
+  			border: 5px solid;
+ 			 position: absolute;
+ 			 top: 50%;
+ 			 transform: translate(0, -50%);
+ 			 padding: 10px;
+		}
+		
 		@media screen and (max-width:1200px){
 			.box{
 				width: 40%;
@@ -56,10 +64,10 @@
 	
 	<div class="containerdiv">
 		
-		<div class="box">1</div>
-		<div class="box">2</div>
-		<div class="box">3</div>
-		<div class="box">4</div>
+		<div class="box"><p class="centerp">One-Way Function</p></div>
+		<div class="box"><p class="centerp">256 Character Digest</p></div>
+		<div class="box"><p class="centerp">prob("collision") = 7.1517x10</p></div>
+		<div class="box"><p class="centerp">Single Thread Brute Force Attack 5108985329 Years!</p></div>
 		
 	</div>
 
