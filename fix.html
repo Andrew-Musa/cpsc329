@@ -181,8 +181,8 @@
   <![endif]-->
 </head>
 <body>
-<h1 id="genesis-hash-algorithm-mathematically-formalized">Genesis Hash
-Algorithm Mathematically Formalized</h1>
+<h1>Genesis Hash Algorithm Mathematically Formalized</h1>
+
 <ul>
 <li>Let <span class="math inline">s</span> be the input string with
 <span class="math inline">8</span> characters and <span
@@ -190,8 +190,12 @@ class="math inline">h</span> be the output hash with <span
 class="math inline">256</span> characters or a step in the process to
 produce the output hash</li>
 </ul>
-<h2 id="step-1-convert-input-string-to-a-decimal-string">Step 1: Convert
-Input String to a Decimal String</h2>
+
+
+
+<h2>Step 1: Convert Input String to a Decimal String</h2>
+
+
 <ul>
 <li><p>Takes each character of the input string <span
 class="math inline">s</span> and converts it into its ASCII decimal
@@ -213,6 +217,8 @@ the decimal representation of the ASCII character</li>
 </ul></li>
 </ul>
 <p><strong><u>Note:</u></strong></p>
+
+
 <ul>
 <li>we only care about the <span class="math inline">95</span> printable
 characters of ASCII which have decimal representations from <span
@@ -223,8 +229,10 @@ class="math inline">12</span>-<span class="math inline">14</span> digit
 number</li>
 </ul></li>
 </ul>
-<h2 id="step-2-partion-the-decimal-string-and-recombine-it">Step 2:
-Partion the Decimal String and Recombine it</h2>
+
+
+<h2>Step 2: Partion the Decimal String and Recombine it</h2>
+
 <ul>
 <li>The concatenated decimal string <span class="math inline">h</span>
 is treated like an array then partitioned into two strings <span
@@ -237,6 +245,8 @@ with an even index</li>
 with an odd index</li>
 </ul></li>
 </ul>
+
+
 <p><span class="math display">
 \begin{align}
 h &amp;= h_0h_1...h_n \\
@@ -343,11 +353,15 @@ class="math inline">1</span></li>
 </ul></li>
 </ul></li>
 </ul>
-<h2 id="step-6-convert-bit-string-into-rna-string">Step 6: Convert Bit
-String into RNA String</h2>
+<h2>Step 6: Convert Bit String into RNA String</h2>
+
+
 <ul>
 <li>the bit string will be remapped using the following table:</li>
 </ul>
+
+
+
 <table>
 <thead>
 <tr class="header">
@@ -374,130 +388,166 @@ String into RNA String</h2>
 </tr>
 </tbody>
 </table>
+
+
+
 <h2 id="step-7-convert-rna-string-to-amino-acid-string">Step 7: Convert
 RNA String to Amino Acid String</h2>
+
+
+
 <ul>
 <li>the RNA string will be remapped using the following table</li>
 </ul>
+
+
+
 <table>
+
+
 <thead>
 <tr class="header">
 <th style="text-align: center;">Amino Acid</th>
 <th style="text-align: center;">RNA Codon</th>
 </tr>
 </thead>
+
+
 <tbody>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">A</span></td>
 <td style="text-align: center;"><span class="math inline">GCU, GCC, GCA,
 GCG</span></td>
 </tr>
+
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">L</span></td>
 <td style="text-align: center;"><span class="math inline">CUU, CUC, CUA,
 CUG, UUA, UUG</span></td>
 </tr>
+
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">R</span></td>
 <td style="text-align: center;"><span class="math inline">CGU, CGC, CGA,
 CGG, AGA, AGG</span></td>
 </tr>
+
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">K</span></td>
 <td style="text-align: center;"><span class="math inline">AAA,
 AAG</span></td>
 </tr>
+
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">N</span></td>
 <td style="text-align: center;"><span class="math inline">AAU,
 AAC</span></td>
 </tr>
+
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">M</span></td>
 <td style="text-align: center;"><span
 class="math inline">AUG</span></td>
 </tr>
+
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">D</span></td>
 <td style="text-align: center;"><span class="math inline">GAU,
 GAC</span></td>
 </tr>
+
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">F</span></td>
 <td style="text-align: center;"><span class="math inline">UUU,
 UUC</span></td>
 </tr>
+
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">C</span></td>
 <td style="text-align: center;"><span class="math inline">UGU,
 UGC</span></td>
 </tr>
+
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">P</span></td>
 <td style="text-align: center;"><span class="math inline">CCU, CCC, CCA,
 CCG</span></td>
 </tr>
+
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">Q</span></td>
 <td style="text-align: center;"><span class="math inline">CAA,
 CAG</span></td>
 </tr>
+
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">S</span></td>
 <td style="text-align: center;"><span class="math inline">UCU, UCC, UCA,
 UCG, AGU, AGC</span></td>
 </tr>
+
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">E</span></td>
 <td style="text-align: center;"><span class="math inline">GAA,
 GAG</span></td>
 </tr>
+
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">T</span></td>
 <td style="text-align: center;"><span class="math inline">ACU, ACC, ACA,
 ACG</span></td>
 </tr>
+
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">E</span></td>
 <td style="text-align: center;"><span class="math inline">GAA,
 GAG</span></td>
 </tr>
+
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">W</span></td>
 <td style="text-align: center;"><span
 class="math inline">UGG</span></td>
 </tr>
+
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">G</span></td>
 <td style="text-align: center;"><span class="math inline">GGU, GGC, GGA,
 GGG</span></td>
 </tr>
+
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">Y</span></td>
 <td style="text-align: center;"><span class="math inline">UAU,
 UAC</span></td>
 </tr>
+
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">H</span></td>
 <td style="text-align: center;"><span class="math inline">CAU,
 CAC</span></td>
 </tr>
+
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">V</span></td>
 <td style="text-align: center;"><span class="math inline">GUU, GUC, GUA,
 GUG</span></td>
 </tr>
+
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">I</span></td>
 <td style="text-align: center;"><span class="math inline">AUU, AUC,
 AUA</span></td>
 </tr>
+
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\_</span></td>
 <td style="text-align: center;"><span class="math inline">UAA, UGA,
 UAG</span></td>
 </tr>
+
 </tbody>
 </table>
+
 </body>
 </html>
