@@ -5,6 +5,7 @@
     <title>Central Dogma Hash Algorithm</title>
     <link rel="stylesheet" href="index.css">
 
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.11.0/brython.js"
         integrity="sha512-9h/FswJ8lwp6Lf5IrbROrJbdPEFx6vGSjf4KUpj6SZwPs9xaFdmgBUHnV2AcM1a+bPJHhEl+faDb5/qtCN+9eg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -14,11 +15,12 @@
 
     <style>
         .hashbtn {
-            background-color: rgb(40, 140, 85);
+            background-color: #69e382;
             border: none;
-            color: white;
+            color: #121212;
             padding: 16px 32px;
             text-align: center;
+            font-weight: bold;
             font-size: 16px;
             margin: 4px 2px;
             opacity: 0.6;
@@ -61,7 +63,6 @@
         .containerdiv {
             width: 100%;
             height: auto;
-
             display: flex;
             flex-direction: row;
             justify-content: space-around;
@@ -74,11 +75,13 @@
             position: relative;
             width: 20%;
             height: 120px;
-            color: #202124;
-            background-color: rgb(105, 227, 130);
+            color: #121212;
+            background-color: #69e382;
             margin: 20px;
             box-sizing: border-box;
+            font-weight: bold;
             text-align: center;
+            vertical-align: middle;
             font-size: 20px;
         }
 
@@ -116,10 +119,11 @@
 
 </head>
 
-<body onload="brython()" style="background-color: #202124;">
-    <div style="position:absolute;margin-top:10px;margin-left:10px;z-index:10;">
+<body onload="brython()"
+    style="background-color: #121212; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+    <div style="position:absolute;margin-top:10px;margin-left:10px;z-index:10;font-weight: bold;">
         <ul>
-            <!--rgb(105, 227, 130);-->
+            <!--#202124;-->
             <li><a href="https://andrew-musa.github.io/cpsc329/index.html"
                     style="color: white;text-decoration: none;">Home</a></li>
             <li><a href="https://andrew-musa.github.io/cpsc329/overview.html"
@@ -150,14 +154,13 @@
 </div>-->
 
 
-    <div class="containerdiv">
-
-        <div class="box"></br></br>One-Way Function</div>
-        <div class="box"></br></br>256 Character Digest</div>
-        <div class="box"><span class="math display">prob("collision")</span><span class="math display"> =
-                7.1517x10^{-308}</span></div>
-        <div class="box" style="text-align: center;vertical-align: middle;"></br>Single Thread Brute Force Attack
-            5108985329 Years!</div>
+    <div class="containerdiv" style="margin: auto;">
+        <div class="box"></br>One-Way Function</div>
+        <div class="box"></br>256 Character Digest</div>
+        <div class="box"></br>prob("collision") =
+            7.1517x10<sup>-308</sup><br>(8 character passwords)</div>
+        <div class="box"></br>Single Thread Brute Force Attack takes
+            5108985329 Years</br>(8 character passwords)</div>
 
     </div>
     </br></br>
@@ -171,7 +174,6 @@
 
     <center><input type="text" id="text" placeholder="Enter Text to Hash!"></center></br>
     <center><button id="btn" class="hashbtn">Hash!</button></br></center></br>
-    <!--<span id="output"></span>-->
     <center>
         <div class="textfield">
             <div id="field"
